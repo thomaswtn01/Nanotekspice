@@ -6,20 +6,25 @@
 */
 
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 #ifndef PARSE_HPP_
 #define PARSE_HPP_
 
 class Parse {
     public:
-        Parse(std::string filename);
+        Parse(char *filename);
         ~Parse();
     void Emptyfile();
-    std::string composent_name();
+    void composent_name(char *file);
+    void search_chipset(std::stringstream &no_header_part);
+    void search_link(std::stringstream &no_header_part);
     std::string input();
     std::string output();
     protected:
-    int filename;
+    char *filename;
     private:
 };
 

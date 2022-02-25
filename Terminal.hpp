@@ -12,7 +12,6 @@
 #include <algorithm>
 #include <random>
 #include "Parse.hpp"
-#include "Icomponent.hpp"
 
 
 #ifndef TERMINAL_HPP_
