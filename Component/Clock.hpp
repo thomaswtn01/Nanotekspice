@@ -8,14 +8,19 @@
 #ifndef CLOCK_HPP_
 #define CLOCK_HPP_
 #include <string>
+#include "Input.hpp"
 
-class Clock {
+namespace nts {
+class Clock : public Input{
     public:
         Clock(std::string clock);
         ~Clock();
-
+    void dump() const;
+    void fucntion_clock();
     protected:
+    std::string _clock;
     private:
 };
+}
 
 #endif /* !CLOCK_HPP_ */

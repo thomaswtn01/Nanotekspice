@@ -9,6 +9,7 @@
 #include <map>
 #include <string>
 #include "Icomponent.hpp"
+#include "Component/Clock.hpp"
 #ifndef FUNCTIONS_HPP_
 #define FUNCTIONS_HPP_
 
@@ -25,8 +26,8 @@ class Functions : nts::IComponent{
     virtual nts::Tristate compute(std::size_t pin);
     virtual void setLink(std::string namePinOne, size_t numberPinOne, std::string namePinTwo,
         size_t numberPinTwo);
-    virtual void setLink(std::size_t pin, nts::IComponent &other, std::
-    size_t otherPin);
+    virtual void setLink(std::size_t pin, nts::IComponent &pin2, std::
+    size_t pin3);
     protected:
     std::map<std::string, std::shared_ptr<nts::IComponent>> _function;
     std::map<std::string, std::shared_ptr<nts::Input>> _inputs;

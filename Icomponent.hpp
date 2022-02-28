@@ -5,6 +5,9 @@
 ** Icomponent
 */
 
+//me demande pas pq il faut rajouter ca pour que ca marche je sais pas 
+#pragma once
+
 
 #include <string>
 
@@ -26,3 +29,7 @@ class IComponent
     virtual void dump () const = 0;
     };
 }
+
+
+
+std::ostream &operator << (std::ostream &out, nts::Tristate state);

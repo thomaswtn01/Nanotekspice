@@ -25,9 +25,14 @@ void Functions::initialize_component(const std::string &name, const std::string 
     if (type == "output")
         _output[name] = std::dynamic_pointer_cast<nts::Output>(newfunction);
     if (type == "input") // || type == "clock")
-        _input[name] = std::dynamic_pointer_cast<nts::Input>(newfunction);
+        _inputs[name] = std::dynamic_pointer_cast<nts::Input>(newfunction);
 }
 
+void Functions::setLink(std::size_t pin, nts::IComponent &pin2, std::
+    size_t pin3)
+{
+
+}
 Functions::~Functions()
 {
 }
