@@ -14,12 +14,13 @@
 
 class Functions : nts::IComponent{
     public:
-        Functions() = default;
+        Functions();
     virtual ~Functions();
     void Display();
     void dump() const;
     void simulate(size_t tick = 1);
-
+    void create(std::unique_ptr<nts::IComponent> function, const std::string &name, const std::string &type);
+    void initialize_component(const std::string &name, const std::string &type, std::shared_ptr<nts::IComponent> newfunction);
 ///Remplacement Icomponent
     virtual nts::Tristate compute(std::size_t pin);
     virtual void setLink(std::string namePinOne, size_t numberPinOne, std::string namePinTwo,
@@ -27,6 +28,10 @@ class Functions : nts::IComponent{
     virtual void setLink(std::size_t pin, nts::IComponent &other, std::
     size_t otherPin);
     protected:
+    std::map<std::string, std::shared_ptr<nts::IComponent>> _function;
+    std::map<std::string, std::shared_ptr<nts::Input>> _inputs;
+    std::map<std::string, std::shared_ptr<nts::Output>> _outputs; //penser a crrer les nts
+    std::map<std::string, std::shared_ptr<nts::Clock>> _clocks;
     size_t _tick = 0;
     private:
 };
