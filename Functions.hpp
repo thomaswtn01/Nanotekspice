@@ -28,6 +28,7 @@ class Functions : nts::IComponent{
         size_t numberPinTwo);
     virtual void setLink(std::size_t pin, nts::IComponent &pin2, std::
     size_t pin3);
+    void setInput(std::string const &name, std::string const &value);
     protected:
     std::map<std::string, std::shared_ptr<nts::IComponent>> _function;
     std::map<std::string, std::shared_ptr<nts::Input>> _inputs;
