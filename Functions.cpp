@@ -23,9 +23,14 @@ void Functions::initialize_component(const std::string &name, const std::string 
     if (type == "clock")
         _clocks[name] = std::dynamic_pointer_cast<nts::Clock>(newfunction);
     if (type == "output")
-        _output[name] = std::dynamic_pointer_cast<nts::Output>(newfunction);
+        _outputs[name] = std::dynamic_pointer_cast<nts::Output>(newfunction);
     if (type == "input") // || type == "clock")
         _inputs[name] = std::dynamic_pointer_cast<nts::Input>(newfunction);
+}
+
+nts::Tristate Functions::compute(std::size_t pin)
+{
+    return (nts::FALSE);
 }
 
 void Functions::setLink(std::size_t pin, nts::IComponent &pin2, std::

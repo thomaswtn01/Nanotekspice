@@ -15,7 +15,7 @@ nts::Input::Input(std::string &number) : _pin_out(this, 1)
 void nts::Input::setLink(size_t pin, nts::IComponent &other, size_t otherPin)
 {
     if(pin == 1)
-        _pin_out.linked(other, otherPin);
+        _pin_out.create_link(other, otherPin);
     else
         throw std::runtime_error("pin?");
 }

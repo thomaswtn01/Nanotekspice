@@ -6,6 +6,10 @@
 */
 
 #include "CreateComponent.hpp"
+#include "Component/Clock.hpp"
+#include "Component/Input.hpp"
+#include "Component/Output.hpp"
+#include "Functions.hpp"
 
 CreateComponent::CreateComponent()
 {
@@ -20,3 +24,8 @@ CreateComponent::~CreateComponent()
 {
 }
 
+
+nts::Tristate CreateComponent::compute(std::size_t pin)
+{
+    return nts::FALSE;
+}

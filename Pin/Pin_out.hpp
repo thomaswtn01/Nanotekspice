@@ -17,12 +17,13 @@ class Pin_out final
 
 
         Pin_out(IComponent *function, size_t name);
-        ~Pin_out();
-                void simulate(std::size_t tick) override;
-        Tristate compute(size_t pin) override final;
+        ~Pin_out() =default;
+        void simulate(std::size_t tick) override;
+        Tristate compute() override;
+            Tristate compute(size_t pin) override final;
         virtual void setLink(size_t pin, IComponent &other, size_t otherPin)  final;
         void dump() const override ;
-    void linked(IComponent &pin, size_t pin2) override;
+    void create_link(IComponent &pin, size_t pin2) override;
     void restart();
     protected:
     private:

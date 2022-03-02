@@ -12,7 +12,7 @@ nts::Pin_out::Pin_out(IComponent *function, size_t name) : Pin(function, name)
 }
 
 //function si le pin de sorti est link comme le premier
-void nts::Pin_out::linked(nts::IComponent &pin, size_t pin2)
+void nts::Pin_out::create_link(nts::IComponent &pin, size_t pin2)
 {
     if(link_of_pin(pin, pin2) == NULL) {
         _link.emplace_back(pin , pin2);
@@ -23,6 +23,10 @@ void nts::Pin_out::linked(nts::IComponent &pin, size_t pin2)
     //erreur a rajouter si le pin est le meme ?
 }
 
+nts::Tristate nts::Pin_out::compute()
+{
+    return (UNDEFINED);
+}
 void nts::Pin_out::restart()
 {
 

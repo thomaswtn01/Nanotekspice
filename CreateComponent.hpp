@@ -5,6 +5,9 @@
 ** CreateComponent
 */
 
+
+//cc ici ca va faire la factory
+
 #include <string>
 #include "Icomponent.hpp"
 #include <memory>
@@ -12,12 +15,13 @@
 #ifndef CREATECOMPONENT_HPP_
 #define CREATECOMPONENT_HPP_
 
-class CreateComponent : public nts::IComponent{
+class CreateComponent{
     public:
         CreateComponent();
         ~CreateComponent();
-
-        std::unique_ptr < nts::IComponent > createComponent ( const std::string & type ) ;
+        void newfunctions();
+        virtual nts::Tristate compute(std::size_t pin);
+        std::unique_ptr < nts::IComponent > createComponent ( const std::string &type, const std::string &name ) ;
     protected:
     std :: unique_ptr < nts :: IComponent > create4001 () const ;
     std :: unique_ptr < nts :: IComponent > create4011 () const ;

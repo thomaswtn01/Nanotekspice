@@ -9,18 +9,18 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
+#include "Functions.hpp"
 #ifndef PARSE_HPP_
 #define PARSE_HPP_
 
 class Parse {
     public:
-        Parse(char *filename);
+        Parse(char *filename, Functions &thing);
         ~Parse();
     void Emptyfile();
-    void composent_name(char *file);
-    void search_chipset(std::stringstream &no_header_part);
-    void search_link(std::stringstream &no_header_part);
+    void composent_name(Functions &thing, char *file);
+    void search_chipset(Functions &thing ,std::stringstream &no_header_part);
+    void search_link(Functions &function, std::stringstream &no_header_part);
     std::string input();
     std::string output();
     protected:

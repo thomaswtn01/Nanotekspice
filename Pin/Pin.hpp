@@ -29,8 +29,9 @@ class Pin : public IComponent{
     bool link_of_pin(IComponent &pin, size_t pin2) const;
     bool is_pin_linked();
     void function_dump_pin(); //const
+    virtual Tristate compute() = 0;
     //other pin////
-    virtual  void linked(IComponent &pin, size_t pin2) = 0 ;
+    virtual  void create_link(IComponent &pin, size_t pin2) = 0 ;
     protected:
     size_t _pin;
     IComponent &_function;
