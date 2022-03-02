@@ -47,7 +47,7 @@ void Shell::run()
         {
             valueOne = line.substr(0, pos);
             valueTwo = line.substr(pos + 1);
-            _circuit.setInput(valueOne, valueTwo);
+            _circuit.new_IN(valueOne, valueTwo);
         }
         else
         {

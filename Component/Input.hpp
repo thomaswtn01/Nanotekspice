@@ -13,7 +13,7 @@
 namespace nts {
 class Input : public IComponent{
     public:
-        Input(std::string &number);
+        Input(std::string const &number);
         ~Input();
 //Function de Icomponent quil faut remmetre ici alors quelle est herite pour que ca marche me demandez pas pq jsp
         void simulate(std::size_t tick) override;
@@ -25,8 +25,8 @@ class Input : public IComponent{
     Tristate number() const;
     virtual void new_number(Tristate number);
     void new_number(int number);
-    void new_number(std::string &number);
-    void display(std::string &name);
+    void new_number(const std::string &number);
+    void display(const std::string &name);
     void checkifgood();
     protected:
     Tristate _number;

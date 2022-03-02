@@ -33,4 +33,5 @@ void nts::Pin_out::restart()
 }
 nts::Pin_out::~Pin_out()
 {
+    return;
 }

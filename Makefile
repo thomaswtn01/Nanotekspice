@@ -6,9 +6,20 @@
 ##
 
 SRC		= main.cpp \
-		Terminal.cpp \
-		Parse.cpp \
+		Component/Clock.cpp \
+		Component/False.cpp \
+		Component/Input.cpp \
+		Component/Output.cpp \
+		Component/True.cpp \
+		Pin/ManagerofPin.cpp \
+		Pin/Pin_in.cpp \
+		Pin/Pin_out.cpp \
+		Pin/Pin.cpp \
+		CreateComponent.cpp \
 		Functions.cpp \
+		Parse.cpp \
+		Shell.cpp \
+
 
 
 NAME	=	nanotekspice

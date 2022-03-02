@@ -9,7 +9,7 @@
 #define MANAGEROFPIN_HPP_
 #include <map>
 #include <memory>
-#include <Pin.hpp>
+#include "Pin.hpp"
 
 namespace nts{
 class ManagerofPin {

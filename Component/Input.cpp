@@ -7,7 +7,7 @@
 
 #include "Input.hpp"
 
-nts::Input::Input(std::string &number) : _pin_out(this, 1)
+nts::Input::Input(std::string const &number) : _pin_out(this, 1)
 {
     new_number(number);
 }
@@ -72,7 +72,7 @@ void nts::Input::new_number(int number)
     }
 
 }
-void nts::Input::new_number(std::string &number)
+void nts::Input::new_number(const std::string &number)
 {
     new_number(std::stoi(number));
     //mettre gestion derreur avec value a Undefined ?
@@ -86,7 +86,7 @@ void nts::Input::new_number(nts::Tristate number)
 
 //function
 
-void nts::Input::display(std::string &name)
+void nts::Input::display(const std::string &name)
 {
     std::cout << "\t" << name << ": " << _number << std::endl;
 }
