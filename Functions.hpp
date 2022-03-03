@@ -19,10 +19,10 @@
 
 class Functions : nts::IComponent{
     public:
-        Functions();
+        Functions() =default;
     virtual ~Functions();
     void Display();
-    void dump() const;
+    virtual void dump() const;
     void simulate(size_t tick = 1);
     void new_IN(std::string const &name, const std::string &number);
     virtual void new_LINK(std::string pin1_name, size_t pin1_number, std::string pin2_name, size_t pin2_number);

@@ -7,7 +7,6 @@
 
 #include "Functions.hpp"
 
-bool clock = true;
 
 void Functions::create(std::unique_ptr<nts::IComponent>function, const std::string &name, const std::string &type)
 {
@@ -63,6 +62,8 @@ void Functions::simulate(std::size_t tick)
 
 void Functions::dump() const
 {
+    bool clock = true;
+
     for(auto &i : _function) {
         if(clock == true)
             clock = false;
