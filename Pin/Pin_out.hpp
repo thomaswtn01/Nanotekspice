@@ -9,7 +9,6 @@
 #define PIN_OUT_HPP_
 #include <string>
 #include "Pin.hpp"
-
 namespace nts {
 class Pin_out final
     : public Pin{
@@ -17,14 +16,10 @@ class Pin_out final
 
 
         Pin_out(IComponent *function, size_t name);
-        ~Pin_out() =default;
-        void simulate(std::size_t tick) override;
+        ~Pin_out();
         Tristate compute() override;
-            Tristate compute(size_t pin) override final;
-        virtual void setLink(size_t pin, IComponent &other, size_t otherPin)  final;
-        void dump() const override ;
     void create_link(IComponent &pin, size_t pin2) override;
-    void restart();
+    void restart() override;
     protected:
     private:
 };

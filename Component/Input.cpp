@@ -12,6 +12,10 @@ nts::Input::Input(std::string const &number) : _pin_out(this, 1)
     new_number(number);
 }
 
+void nts::Input::simulate(std::size_t tick)
+{
+}
+
 void nts::Input::setLink(size_t pin, nts::IComponent &other, size_t otherPin)
 {
     if(pin == 1)
@@ -47,10 +51,6 @@ nts::Tristate nts::Input::number() const
     //this->number = _number;
     return(_number);
 }
-nts::Input::~Input()
-{
-}
-
 
 
 ///New number of pin fubnction :

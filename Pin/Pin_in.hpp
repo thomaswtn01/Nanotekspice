@@ -11,14 +11,14 @@
 #define PIN_IN_HPP_
 
 namespace nts {
-class Pin_in : virtual public Pin{
+class Pin_in final :  public Pin{
     public:
         Pin_in(IComponent *name, size_t number);
         ~Pin_in();
 
     void create_link(IComponent &pin, size_t pin2) override;
     Tristate compute() override;
-    void restart();
+    void restart() override ;
 
     protected:
     nts::Tristate form;

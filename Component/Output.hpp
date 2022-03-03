@@ -8,7 +8,6 @@
 #ifndef OUTPUT_HPP_
 #define OUTPUT_HPP_
 #include "../Pin/ManagerofPin.hpp"
-#include <functional>
 namespace nts {
 class Output : public IComponent{
     public:

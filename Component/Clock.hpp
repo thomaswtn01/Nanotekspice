@@ -9,13 +9,12 @@
 #define CLOCK_HPP_
 #include <string>
 #include "Input.hpp"
-
 namespace nts {
 class Clock : public Input{
     public:
         Clock(std::string clock);
         ~Clock();
-    void dump() const;
+    void dump() const override;
     void fucntion_clock();
     protected:
     std::string _clock;

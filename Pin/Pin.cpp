@@ -29,7 +29,7 @@ bool nts::Pin::is_pin_linked()
     return (_link.empty() == NULL);
 }
 
-void nts::Pin::function_dump_pin()
+void nts::Pin::dump() const
 {
     int i = 0;
     std::stringstream ss;

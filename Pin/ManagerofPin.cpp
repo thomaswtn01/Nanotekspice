@@ -10,7 +10,9 @@
 #include "Pin_in.hpp"
 #include <string>
 #include <iostream>
+#include <functional>
 #include <ostream>
+
 
 void nts::ManagerofPin::PinIN_add(IComponent *function, size_t pin)
 {

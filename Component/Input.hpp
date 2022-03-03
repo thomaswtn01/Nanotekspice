@@ -7,14 +7,13 @@
 
 #ifndef INPUT_HPP_
 #define INPUT_HPP_
-#include <string>
 #include "../Pin/Pin_out.hpp"
 
 namespace nts {
 class Input : public IComponent{
     public:
         Input(std::string const &number);
-        ~Input();
+        ~Input() = default;
 //Function de Icomponent quil faut remmetre ici alors quelle est herite pour que ca marche me demandez pas pq jsp
         void simulate(std::size_t tick) override;
         Tristate compute(size_t pin) override final;

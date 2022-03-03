@@ -17,7 +17,7 @@
 #include <sstream>
 
 namespace nts {
-class Pin : public IComponent{
+class Pin{
     public:
         using Link = std::pair<std::reference_wrapper<IComponent>, size_t>;
         Pin(IComponent *function, size_t name);
@@ -28,8 +28,9 @@ class Pin : public IComponent{
     //link pin function
     bool link_of_pin(IComponent &pin, size_t pin2) const;
     bool is_pin_linked();
-    void function_dump_pin(); //const
     virtual Tristate compute() = 0;
+    virtual void restart() = 0;
+    void dump() const;
     //other pin////
     virtual  void create_link(IComponent &pin, size_t pin2) = 0 ;
     protected:
