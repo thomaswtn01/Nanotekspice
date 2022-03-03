@@ -20,7 +20,7 @@ int main(int ac, char **av)
     functions.simulate();
     Shell shell(functions);
     shell.run();
-    Terminal("", av[1]);
+    // Terminal("", av[1]);
     return(0);
 
 }

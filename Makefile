@@ -21,7 +21,6 @@ SRC		= main.cpp \
 		Shell.cpp \
 
 
-
 NAME	=	nanotekspice
 
 all:	$(NAME)
