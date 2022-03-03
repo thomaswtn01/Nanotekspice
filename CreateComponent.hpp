@@ -18,10 +18,9 @@
 class CreateComponent{
     public:
         CreateComponent();
-        ~CreateComponent();
-        void newfunctions();
+        void newfunctions(const std::string &type, const std::string &name );
         virtual nts::Tristate compute(std::size_t pin);
-        std::unique_ptr < nts::IComponent > createComponent ( const std::string &type, const std::string &name ) ;
+        std::unique_ptr < nts::IComponent > create_Component ( const std::string &type, const std::string &name ) ;
     protected:
     std :: unique_ptr < nts :: IComponent > createclock (const std::string &name) const noexcept;
     std :: unique_ptr < nts :: IComponent > createinput (const std::string &name) const noexcept;

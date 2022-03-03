@@ -6,7 +6,6 @@
 */
 
 #include "Component.hpp"
-
 void Component::linkTo(IComponent* link_to)
 {
 }
@@ -36,6 +35,7 @@ nts::Tristate Component::compute(std::size_t pin)
 
 std::ostream &operator << (std::ostream &out, nts::Tristate state)
 {
+
     if (state == nts::Tristate::UNDEFINED)
         out << "U";
     else if (state == nts::FALSE)

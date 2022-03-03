@@ -19,6 +19,7 @@ SRC		= main.cpp \
 		Functions.cpp \
 		Parse.cpp \
 		Shell.cpp \
+		Component.cpp \
 
 
 NAME	=	nanotekspice

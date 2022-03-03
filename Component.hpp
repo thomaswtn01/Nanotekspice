@@ -28,3 +28,4 @@ public:
 };
 
 #endif /* !COMPONENT_HPP_ */
+
