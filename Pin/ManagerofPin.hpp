@@ -9,7 +9,7 @@
 #define MANAGEROFPIN_HPP_
 #include <map>
 #include <memory>
-#include <Pin.hpp>
+#include "Pin.hpp"
 
 namespace nts{
 class ManagerofPin {
@@ -17,7 +17,7 @@ class ManagerofPin {
     using IN = std::function<Tristate(Tristate)>;
     using ININ = std::function<Tristate(Tristate, Tristate)>;
         ManagerofPin() = default;
-        ~ManagerofPin();
+        ~ManagerofPin() = default;
     ManagerofPin(ManagerofPin &&)  = default;
 
     //Pin
@@ -26,9 +26,8 @@ class ManagerofPin {
 
     //Compute pour les 3 cas ( 1 2 ou 3 pin)
     Tristate compute(std::size_t pin);
-    Tristate compute(IN *name, size_t pin);
-    Tristate compute(ININ *name, size_t pin, size_t pin2);
-    protected:
+    Tristate compute(IN name, size_t pin);
+    Tristate compute(ININ name, size_t pin, size_t pin2);
 
     //Icomponent function
     void setLink(size_t pin, IComponent &other, size_t otherPin);
@@ -38,8 +37,9 @@ class ManagerofPin {
 
 
     //Managing function
-    void restart() const;
+    void restart();
     void dump() const;
+    protected:
     std::map<size_t , std::unique_ptr<Pin>> _pins;
     private:
 };

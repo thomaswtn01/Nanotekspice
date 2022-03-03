@@ -8,7 +8,7 @@
 #include "Parse.hpp"
 #include <algorithm>
 
-Parse::Parse(char  *file)
+Parse::Parse(char  *file, Functions &thing)
 {
     std::string file_name (file);
     std::ifstream filename(file_name, std::ios::in);
@@ -17,10 +17,10 @@ Parse::Parse(char  *file)
     if(!filename)
         std::cout << file_name << " de merde pas la" << std::endl;
     ////mettre condition si pas .nts
-    composent_name(file);
+    composent_name(thing, file);
 }
 
-void Parse::composent_name(char *file)
+void Parse::composent_name(Functions &thing, char *file)
 {
     std::string file_name (file);
     std::ifstream filename(file_name, std::ios::in);
@@ -42,17 +42,17 @@ void Parse::composent_name(char *file)
         // si on ne trouve pas le .chipset
     ss >> line >> emp;
     if(line == ".chipsets:" && emp.empty() != NULL) { //Revoir la condition
-        search_chipset(no_header_part);
-        search_link(no_header_part);
+        search_chipset(thing, no_header_part);
+        search_link(thing, no_header_part);
     }
 
 }
 
-void Parse::search_chipset(std::stringstream &no_header_part)
+void Parse::search_chipset(Functions &thing, std::stringstream &no_header_part)
 {
 
 }
-void Parse::search_link(std::stringstream &no_header_part)
+void Parse::search_link(Functions &function, std::stringstream &no_header_part)
 {
 
 }
