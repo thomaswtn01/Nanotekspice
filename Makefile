@@ -20,6 +20,8 @@ SRC		= main.cpp \
 		Parse.cpp \
 		Shell.cpp \
 		Component.cpp \
+		Porte.cpp \
+		Component/porte_4001.cpp \
 
 
 NAME	=	nanotekspice

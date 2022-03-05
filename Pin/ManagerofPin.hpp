@@ -10,6 +10,7 @@
 #include <map>
 #include <memory>
 #include "Pin.hpp"
+#include "../Porte.hpp"
 
 namespace nts{
 class ManagerofPin {

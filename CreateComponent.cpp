@@ -12,6 +12,7 @@
 #include "Functions.hpp"
 #include "Component/True.hpp"
 #include "Component/False.hpp"
+#include "Porte.hpp"
 
 
 std::unique_ptr < nts::IComponent > CreateComponent::create_Component(const std::string &type, const std::string &name)
@@ -99,10 +100,10 @@ std::unique_ptr<nts::IComponent> CreateComponent::createfalse(const std::string 
 //     return nts::FALSE;
 // }
 
-// CreateComponent::CreateComponent()
-// {
-//     create_Component(_type, _name);
-// }
+CreateComponent::CreateComponent()
+{
+    create_Component(_type, _name);
+}
 
 // CreateComponent::~CreateComponent()
 // {

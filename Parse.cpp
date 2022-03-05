@@ -7,7 +7,7 @@
 
 #include "Parse.hpp"
 #include <algorithm>
-
+#include "CreateComponent.hpp"
 Parse::Parse(char  *file, Functions &thing)
 {
     std::string file_name (file);
@@ -38,7 +38,7 @@ void Parse::composent_name(Functions &thing, char *file)
         // voir un peu mieux pour la reutiliser
     }
     if (!getline(no_header_part, line))
-        std::cout << "bad file with no chipset" << std::endl;
+        std::cout << "no chipset" << std::endl;
         // si on ne trouve pas le .chipset
     ss >> line >> emp;
     if(line == ".chipsets:" && emp.empty() != NULL) { //Revoir la condition
@@ -50,7 +50,29 @@ void Parse::composent_name(Functions &thing, char *file)
 
 void Parse::search_chipset(Functions &thing, std::stringstream &no_header_part)
 {
+    CreateComponent Component;
+    std::string line;
+    std::stringstream lineStream;
+    std::string one;
+    std::string two;
+    std::string vide;
 
+    while (getline(no_header_part, line))
+    {
+        std::stringstream ss(line);
+        std::string links;
+        std::string emp;
+        ss >> links >> emp;
+        if (links ==".links:"){
+            break;
+        }
+        lineStream = std::stringstream (line);
+        lineStream >> one >> two >> vide;
+        fflush(stdout);
+        std::unique_ptr<nts::IComponent> i = Component.create_Component(one, two);
+        thing.create(std::move(i), two, one);
+
+    }
 }
 void Parse::search_link(Functions &function, std::stringstream &no_header_part)
 {

@@ -19,7 +19,6 @@ class CreateComponent{
     public:
         CreateComponent();
         void newfunctions(const std::string &type, const std::string &name );
-        virtual nts::Tristate compute(std::size_t pin);
         std::unique_ptr < nts::IComponent > create_Component ( const std::string &type, const std::string &name ) ;
     protected:
     std :: unique_ptr < nts :: IComponent > createclock (const std::string &name) const noexcept;
@@ -42,9 +41,9 @@ class CreateComponent{
     std :: unique_ptr < nts :: IComponent > create4514 (const std::string &name) const noexcept;
     std :: unique_ptr < nts :: IComponent > create4801 (const std::string &name) const noexcept;
     std :: unique_ptr < nts :: IComponent > create2716 (const std::string &name) const noexcept;
-    private:
     const std::string _name;
     const std::string _type;
+    private:
 };
 
 #endif /* !CREATECOMPONENT_HPP_ */
